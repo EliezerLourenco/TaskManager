@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<BorderPane fx:controller="com.example.javaintroproject.controller.TaskController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="402.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <TableView fx:id="tasksTableView" prefHeight="289.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="taskNameColumn" prefWidth="147.0" text="A">
+               <graphic>
+                  <VBox prefHeight="198.0" prefWidth="105.0">
+                     <children>
+                        <TextField fx:id="taskNameField" prefHeight="22.0" prefWidth="100.0" />
+                        <Label text="Task Name" />
+                     </children>
+                  </VBox>
+               </graphic>
+            </TableColumn>
+            <TableColumn fx:id="descriptionColumn" prefWidth="152.0" text="B">
+               <graphic>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <TextField fx:id="descriptionField" prefHeight="17.0" prefWidth="139.0" />
+                        <Label text="Description" />
+                     </children>
+                  </VBox>
+               </graphic>
+            </TableColumn>
+            <TableColumn fx:id="dueDateColumn" prefWidth="127.0" text="C">
+               <graphic>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <DatePicker fx:id="dueDatePicker" />
+                        <Label prefHeight="17.0" prefWidth="76.0" text="Due date" />
+                     </children>
+                  </VBox>
+               </graphic>
+            </TableColumn>
+            <TableColumn fx:id="statusColumn" prefWidth="173.0" text="D">
+               <graphic>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                         <ComboBox fx:id="statusComboBox" prefWidth="150.0"/>
+                         <Label text="Status" />
+                     </children>
+                  </VBox>
+               </graphic>
+            </TableColumn>
+        </columns>
+      </TableView>
+   </top>
+   <bottom>
+      <HBox prefHeight="140.0" prefWidth="551.0" BorderPane.alignment="CENTER">
+         <children>
+             <Button fx:id="addButton" mnemonicParsing="false" text="Add" onAction="#handleAddAction"/>
+             <Button fx:id="editButton" mnemonicParsing="false" text="Edit" onAction="#handleEditAction"/>
+             <Button fx:id="deleteButton" mnemonicParsing="false" text="Delete" onAction="#handleDeleteAction"/>
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>
